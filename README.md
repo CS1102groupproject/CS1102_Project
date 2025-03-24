@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> The Mechanism and Applications of Blockchain </title>
+  <title> CS1102 The Mechanism and Applications of Blockchain<</title>
+  
 </head>
 </html>
 Yeung Ho Fung 57847209
