@@ -1,14 +1,4 @@
-# CS1102_Project
-
-## Project Members
-- Yeung Ho Fung 57847209
-- Law Ho Tat 57317481
-- Ma Chun Chiu 57134824 
-- Chiu Tsz Ki 56615622
-
-## Project Description
-CS1102 The Mechanism and Applications of Blockchain
-
+# CS1102 The Mechanism and Applications of Blockchain
 <!DOCTYPE html>
 <html>
   <head>
@@ -28,3 +18,9 @@ CS1102 The Mechanism and Applications of Blockchain
     </script>
   </head>
 </html>
+
+## Project Members
+Yeung Ho Fung 57847209
+Law Ho Tat 57317481
+Ma Chun Chiu 57134824 
+Chiu Tsz Ki 56615622
