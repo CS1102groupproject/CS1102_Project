@@ -76,7 +76,7 @@
 <body>
     <header>
         <h1>CS1102_The Mechanism and Applications of Blockchain</h1>
-        <h2>Project Members:</h2>
+        <h2>Project Members1:</h2>
         <p>Yeung Ho Fung 57847209<br>Law Ho Tat 57317481<br>Ma Chun Chiu 57134824<br>Chiu Tsz Ki 56615622</p>
     </header>
     <main>
