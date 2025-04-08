@@ -269,7 +269,7 @@
             <p>When the block is verified, the block is distributed to the entire network. The miner will be rewarded. Each node adds the corresponding node to the majority chain.</p>
 
 
-</main>
+
 </body>
 </html>
 
