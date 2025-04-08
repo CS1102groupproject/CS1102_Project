@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -267,11 +266,8 @@
             <p>A block contains a header referencing the previous block’s hash and the transactions. A hash contains 8 bytes using the algorithm agreed upon by the network. The linked hash provides security and interdependency of the chain. Before adding to form the block in the blockchain, it must be first validated. One of the methods is through proof consensus mechanisms (Proof of Work / Proof of Stake), solving the mathematical puzzle from the block’s header. Miners make extra changes to a variable to solve the blocks until it satisfies the requirements of the entire network; this is named “proof of work”. If someone maliciously attempts to manipulate the block and submit to the chain, the hash function will change to defence. The other nodes will then reject the block from entering the major chain in order to prevent corruption.
 </p>
                
-            <p>When the block is verified, the block is distributed to the entire network. The miner will be rewarded. Each node adds the corresponding node to the majority chain
-.</p>
-        </div>
-  </div>
-        </div>
+            <p>When the block is verified, the block is distributed to the entire network. The miner will be rewarded. Each node adds the corresponding node to the majority chain.</p>
+
 
         <div id="bitcoinPage" class="page">
             <h2>Bitcoin Analysis</h2>
