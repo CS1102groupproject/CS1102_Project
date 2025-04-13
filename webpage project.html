@@ -302,6 +302,7 @@
                     <button onclick="showPage('tablePage')">Table Comparison</button>
                 </div>
             </div>
+            <button class="header-button" id="prosConsButton" onclick="showPage('prosConsPage')">Pros and Cons</button> <!-- new pageeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee -->
             <button class="header-button" id="referenceButton" onclick="showPage('referencePage')">References</button>
         </div>
         <h1>CS1102_The Mechanism and Applications of Blockchain</h1>
@@ -432,6 +433,28 @@
                         <td>Host chain dependent<br>- Efficient on PoS<br>- Inefficient on PoW</td>
                     </tr>
                 </table>
+            </div>
+        </div>
+
+        <div id="prosConsPage" class="page"> <!-- pros and cons page , there is much more to be added !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+            <h2>Pros and Cons of Blockchain Technology</h2>
+            <div class="pros-cons">
+                <h3>Pros</h3>
+                <ul>
+                    <li>Decentralization: Reduces the risk of centralized control and single points of failure.</li>
+                    <li>Transparency: All transactions are recorded on a public ledger, enhancing trust.</li>
+                    <li>Security: Cryptographic techniques make it difficult to alter data.</li>
+                    <li>Immutability: Once data is recorded, it cannot be changed, ensuring integrity.</li>
+                    <li>Efficiency: Streamlines processes by eliminating intermediaries.</li>
+                </ul>
+                <h3>Cons</h3>
+                <ul>
+                    <li>Scalability: Current blockchain networks struggle with high transaction volumes.</li>
+                    <li>Energy Consumption: Proof-of-Work blockchains require significant computational power.</li>
+                    <li>Complexity: Understanding and implementing blockchain can be challenging.</li>
+                    <li>Regulatory Uncertainty: Legal frameworks are still evolving, leading to potential risks.</li>
+                    <li>Cost: Transaction fees can be high during peak times.</li>
+                </ul>
             </div>
         </div>
 
@@ -648,5 +671,3 @@
             });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92f8c963ae08bfbd',t:'MTc0NDUyNDQ4My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-</html>
