@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CS1102 Blockchain Analysis</title>
+      <script>
+               function greeting(){
+                   var name;
+                   n = prompt("what is your name?);
+                              document.getElementById("message").innerHTML=
+                              "Hello "+"n"+" Welcome to our page! This page would like to show how blockchain works, the transactions of cryptocurrencies, especially the implementation of Bitcoin. A comparison of different cryptocurrency techniques will also be covered. Let's explore more about Blockchain together with us!";}
+     </script>
     <style>
         body {
             font-family: 'Times', serif;
@@ -292,7 +299,9 @@
         }
     </style>
 </head>
-<body>
+<body onload = "greeting();">
+    <div id="message">
+    </div>
     <header>
         <div class="header-buttons">
             <button class="header-button" id="homeButton">Home</button>
@@ -316,15 +325,15 @@
 
     <main>
         <div id="homePage" class="page active-page">
-            <h2>About This Page</h2>
-            <p>This page would like to show how blockchain works, the transactions of cryptocurrencies, especially the implementation of Bitcoin. A comparison of different cryptocurrency techniques will also be covered. Let's explore more about Blockchain together with us!</p>
-            <button id="clickMe">Show More</button>
-            <div id="Showmore">
+         
+           
                  <h3>What are Blocks?</h3>
             <p>Blocks are a continuously growing list of ordered records. These blocks “are linked using cryptography. Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data.</p>
             <h3>What is Blockchain?</h3>
             <p>Blockchain is a public, digital ledger which tracks real-time movements and transactions of assets. Each transaction is a single “block”, and each block links together to form a “chain” known as a “blockchain”. Encrypted data in the blocks are linked with one another permanently. A blockchain is a decentralized database that keeps a continuously growing list of ordered records called blocks. It records transactions of multiple computers, which record cannot be altered retroactively without modifying all corresponding subsequent blocks and networks. Each transaction is visible to participants within the network. It creates the audit history of each transaction and keeps records and reviews. When new data is added to the network, it is required to verify the legitimacy of the data according to the economic incentives or authority of the majority of nodes. This process is named the consensus mechanism. Cryptographic techniques secure the data in the blockchain, which makes it complicated to tamper with. Once the consensus is obtained, a new block will be created along the chain. All nodes will thereby be updated.
-</p>
+</p> 
+            <button id="clickMe">Show More</button>
+            <div id="Showmore">
             <h3>How Blockchain Works?</h3>
             <p>Blockchain begins with the data exchanged between two parties in the form of money, deeds, contracts, customer details, medical records, or any other asset in digital form. Verification is required. The duration of the step taken will depend on the network’s parameters, which will be undertaken instantly or transcribed into secured records and pending transactions in the queue. The computers or servers in the network will then determine the transaction's validity according to the network rules.
 </p>
