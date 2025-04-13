@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -40,7 +41,6 @@
             font-size: 1rem;
             transition: all 0.3s ease;
             font-family: 'Times', serif;
-            position: relative;
         }
         .header-button:hover {
             background: white;
@@ -169,7 +169,6 @@
             top: 0;
             z-index: 3;
         }
-        /* Make both the first header cell and first data cells sticky */
         .comparison-table th:first-child,
         .comparison-table td:first-child {
             position: sticky;
@@ -177,7 +176,7 @@
             z-index: 2;
         }
         .comparison-table th:first-child {
-            z-index: 4; /* Higher than other sticky elements */
+            z-index: 4;
         }
         .comparison-table tr:nth-child(even) td:first-child {
             background-color: #f8f9fa;
@@ -247,14 +246,14 @@
         <p>Yeung Ho Fung 57847209<br>Law Ho Tat 57317481<br>Ma Chun Chiu 57134824<br>Chiu Tsz Ki 56615622</p>
     </header>
 
-
     <main>
         <div id="homePage" class="page active-page">
             <h2>About This Page</h2>
             <p>This page would like to show how blockchain works, the transactions of cryptocurrencies, especially the implementation of Bitcoin. A comparison of different cryptocurrency techniques will also be covered. Let's explore more about Blockchain together with us!</p>
+            </p>
             <button id="clickMe">Show More</button>
-        <div id="Showmore">
-            <h3>What are Blocks?</h3>
+            <div id="Showmore">
+              <h3>What are Blocks?</h3>
             <p>Blocks are a continuously growing list of ordered records. These blocks “are linked using cryptography. Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data.</p>
             <h3>What is Blockchain?</h3>
             <p>Blockchain is a public, digital ledger which tracks real-time movements and transactions of assets. Each transaction is a single “block”, and each block links together to form a “chain” known as a “blockchain”. Encrypted data in the blocks are linked with one another permanently. A blockchain is a decentralized database that keeps a continuously growing list of ordered records called blocks. It records transactions of multiple computers, which record cannot be altered retroactively without modifying all corresponding subsequent blocks and networks. Each transaction is visible to participants within the network. It creates the audit history of each transaction and keeps records and reviews. When new data is added to the network, it is required to verify the legitimacy of the data according to the economic incentives or authority of the majority of nodes. This process is named the consensus mechanism. Cryptographic techniques secure the data in the blockchain, which makes it complicated to tamper with. Once the consensus is obtained, a new block will be created along the chain. All nodes will thereby be updated.
@@ -268,9 +267,10 @@
                
             <p>When the block is verified, the block is distributed to the entire network. The miner will be rewarded. Each node adds the corresponding node to the majority chain.</p>
 
-<div/>
 
-  <div id="bitcoinPage" class="page">
+        </div>
+
+        <div id="bitcoinPage" class="page">
             <h2>Bitcoin Analysis</h2>
             <h3>Consensus Mechanism: Proof-of-Work (PoW)</h3>
             <p>Miners are required to find a random number that makes the hash have a leading number of zeros to finish the crypto-puzzle. The complexity of the puzzle is adjusted every 2 weeks to maintain the block time around 10 minutes (Nakamoto, n.d.). Hence, Bitcoin applies PoW to ensure that no individual can control the network.</p>
@@ -278,48 +278,61 @@
             <h3>Transaction Speed and Scalability</h3>
             <p>Transactions are grouped into blocks added every ~10 minutes. Merkle Trees compress transactions into a single root hash to save storage. However, Bitcoin processes only approximately 7 transactions per second, which is relatively slow (How Bitcoin Can Scale | River Learn - Bitcoin Basics, n.d.).</p>
             
+
             <h3>Privacy and Anonymity</h3>
-            <p>When executing a transaction, users employ different random-looking (i.e., one-time) pseudonymous public keys (i.e., addresses) to protect their privacy. Privacy is protected due to the randomness as long as the addresses remain unlinked to the user’s identity (Buczak, 2024).</p>
+            <p>When executing a transaction, users employ different random-looking (i.e., one-time) pseudonymous public keys (i.e., addresses) to protect their privacy. Privacy is protected due to the randomness as long as the addresses remain unlinked to the user’s identity (Buczak, 2024).
             
+</p>
             <h3>Smart Contracts and Programmability</h3>
             <p>Only simple scripting rules are applied, such as unlocking transactions based on the specific date (Script - Bitcoin Wiki, n.d.). The complexity of the logic is not as high as in other cryptocurrencies, hence, building complex applications like NFTs is not feasible.</p>
             
+
             <h3>Energy Efficiency</h3>
             <p>Since PoW is used, it requires consuming massive amounts of electricity for mining (Cambridge Blockchain Network Sustainability Index: CBECI, n.d.). Although energy consumption is high, security is ensured. This issue might be mitigated by using renewable energy.</p>
         </div>
+
 
         <div id="ethereumPage" class="page">
             <h2>Ethereum Analysis</h2>
             <h3>Consensus Mechanism: Proof-of-Stake (PoS)</h3>
             <p>PoS is a mechanism used by Ethereum to validate transactions and create new blocks without relying on PoW. Validators are chosen to propose and attest to new blocks via a random selection algorithm, weighted by the amount of ETH staked and time since the last selection (Proof-of-stake (POS), n.d.). Other validators verify the blocks and vote. A block becomes irreversible once confirmed.</p>
             
+
             <h3>Transaction Speed and Scalability</h3>
             <p>ETH uses sharding and rollups to increase transaction speed. Data Sharding divides Ethereum’s blockchain into smaller parallel shards. Rollups process transactions off-chain, bundle them, compress the data onto Ethereum, and provide validity proofs for verification. Ethereum’s transaction speed targets to reach around 100,000 transactions per second, but currently the TPS stays at 173.6 (Sergeenkov, 2024).</p>
             
+
             <h3>Privacy and Anonymity</h3>
             <p>ETH uses zk-SNARKs, Tornado Cash, and Stealth Addresses to provide a trustworthy system (Brown, 2024). Zk-SNARKs and Tornado Cash can be used together to hide transaction details. Zk-SNARKs generates a new encrypted address to prove ownership without leaking personal information, while Tornado Cash acts as a decentralized mixer to enhance privacy.</p>
             
+
             <h3>Smart Contracts and Programmability</h3>
             <p>ETH utilizes Turing-complete smart contracts, which are compiled into EVM bytecode and auto-execute when conditions are met (Team, 2024). These contracts run on the Ethereum Virtual Machine (EVM). The EVM supports loops, conditional logic, and complex computations, making its programmability highly flexible.</p>
             
+
             <h3>Energy Efficiency</h3>
             <p>Due to the adoption of PoS, validators secure the network by staking ETH, not by solving complex crypto-puzzles, reducing energy consumption by 99.95% (How Does Ethereum Work? An Introduction to ETH, n.d.). However, some argue that staking centralizes power among those with more ETH.</p>
         </div>
+
 
         <div id="usdtPage" class="page">
             <h2>USDT Analysis</h2>
             <h3>Consensus Mechanism: Depends on the host chain</h3>
             <p>USDT itself is not a standalone blockchain; its consensus mechanism depends on the host chain. For example, ERC-20 USDT uses PoS, TRC-20 USDT uses DPoS, and the original USDT uses PoW. Thus, security varies.</p>
             
+
             <h3>Transaction Speed and Scalability</h3>
             <p>Since USDT’s consensus mechanism relies on the host chain, transaction speed and scalability vary. For instance, it is slower on ERC-20 USDT (173.6 TPS) than on SPL-based chains (65,000 TPS) (Ledger, 2025).</p>
             
+
             <h3>Privacy and Anonymity</h3>
             <p>USDT records transactions on transparent ledgers, allowing anyone to trace them. While different blockchains offer varying privacy systems (e.g., pseudonymous addresses, mixers, decentralized exchanges), USDT’s privacy remains very low due to traceability.</p>
             
+
             <h3>Smart Contracts and Programmability</h3>
             <p>USDT itself is not programmable and is compatible with the host chain’s apps. It lacks built-in smart contracts. However, it follows the host blockchain’s smart contract rules. Despite not being programmable, USDT is often integrated into programmable ecosystems.</p>
             
+
             <h3>Energy Efficiency</h3>
             <p>Since USDT’s consensus mechanism relies on the host chain, energy efficiency varies by blockchain. For example, it consumes less energy on PoS chains (e.g., ERC-20) and more on PoW chains (e.g., Bitcoin/original USDT). Its eco-friendliness depends on the underlying blockchain.</p>
         </div>
@@ -397,7 +410,7 @@
         <p>Learn more about our Team</p>
     </footer>
 
-<script>
+    <script>
         document.getElementById('comparisonButton').addEventListener('click', function(e) {
             e.stopPropagation();
             const dropdown = document.getElementById('comparisonDropdown');
@@ -427,31 +440,5 @@
         });
 
         function toggleFeatureHighlight(feature) {
-            const buttons = document.querySelectorAll('.filter-btn');
-            const table = document.getElementById('comparisonTable');
-            const allRows = Array.from(table.querySelectorAll('tr:not(:first-child)'));
-            const activeRow = allRows.find(row => 
-                row.querySelector('td:first-child').textContent.trim() === feature
-            );
-
-            buttons.forEach(btn => btn.classList.remove('active'));
-            const currentBtn = Array.from(buttons).find(b => b.textContent.trim() === feature);
-            const wasActive = currentBtn.classList.contains('active');
-            
-            if (!wasActive) {
-                currentBtn.classList.add('active');
-                table.classList.add('hide-features');
-                allRows.forEach(row => {
-                    row.style.display = row === activeRow ? '' : 'none';
-                });
-            } else {
-                table.classList.remove('hide-features');
-                allRows.forEach(row => row.style.display = '');
-            }
-        }
-
-        showPage('homePage');
-    </script>
-</body>
-</html>
+            const buttons = document
 
