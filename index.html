@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CS1102 Blockchain Analysis</title>
       <script>
-               function greeting(){
-                   var name;
-                   name = prompt("What is your name?");
-                     document.getElementById("message").innerHTML=
-                              "Hello "+ name +" !";
-                              alert(
-                              "Hello "+ name +" Welcome to our page! This page will let you know more about the mechanism and applications of blockchain. Let us explore together!";)}
-     </script>
+    function greeting() {
+        var name;
+        name = prompt("What is your name?");
+        document.getElementById("message").innerHTML = "Hello " + name + "!";
+        alert("Hello " + name + " Welcome to our page! This page will let you know more about the mechanism and applications of blockchain. Let us explore together!");
+    }
+</script>
     <style>
         body {
             font-family: 'Times', serif;
@@ -301,8 +300,8 @@
         }
     </style>
 </head>
-<body onload = "greeting();">
-
+<body onload="greeting()">
+    <div id="message"></div>
     <header>
         <div class="header-buttons">
             <button class="header-button" id="homeButton">Home</button>
@@ -326,7 +325,7 @@
 
     <main>
         <div id="homePage" class="page active-page">
-      <div id="message">
+      
            
                  <h3>What are Blocks?</h3>
             <p>Blocks are a continuously growing list of ordered records. These blocks “are linked using cryptography. Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data.</p>
@@ -344,7 +343,7 @@
                
             <p>When the block is verified, the block is distributed to the entire network. The miner will be rewarded. Each node adds the corresponding node to the majority chain.</p>
 
-             </div>   
+           
       </div>
         </div>
 
