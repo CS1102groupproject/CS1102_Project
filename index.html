@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CS1102 Blockchain Analysis</title>
-      <script>
+    <script>
     function greeting() {
         var name;
         name = prompt("What is your name?");
         document.getElementById("message").innerHTML = "Hello " + name + "!";
         alert("Hello " +  name + " !" +" Welcome to our page! This page will let you know more about the mechanism and applications of blockchain. Let us explore together!");
     }
-</script>
+    </script>
     <style>
         body {
             font-family: 'Times', serif;
@@ -54,6 +54,10 @@
         .header-button:hover {
             background: white;
             color: #6a89cc;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
         }
         .dropdown-content {
             display: none;
@@ -178,20 +182,11 @@
             top: 0;
             z-index: 3;
         }
-        .comparison-table th:first-child,
-        .comparison-table td:first-child {
-            position: sticky;
-            left: 0;
-            z-index: 2;
-        }
-        .comparison-table th:first-child {
-            z-index: 4;
-        }
-        .comparison-table tr:nth-child(even) td:first-child {
-            background-color: #f8f9fa;
-        }
         .comparison-table tr:nth-child(even) {
             background-color: #f8f9fa;
+        }
+        .comparison-table tr:nth-child(odd) {
+            background-color: #ffffff;
         }
         .table-filters {
             margin: 1rem 0;
@@ -218,6 +213,33 @@
         .comparison-table.hide-features td:first-child {
             display: none;
         }
+        .reference-image-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 200px;
+            height: auto;
+            border: 1px solid #ddd;
+            padding: 5px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .reference-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+        .reference-image-caption {
+            text-align: center;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            color: #666;
+        }
+        .reference-page-content {
+            position: relative;
+            padding-right: 220px;
+        }
         @media (max-width: 768px) {
             .comparison-table {
                 font-size: 0.9rem;
@@ -232,7 +254,6 @@
                 font-size: 0.9rem;
             }
         }
-        /* Quiz Styles */
         .modal {
             display: none;
             position: fixed;
@@ -294,14 +315,12 @@
         .check-answers:hover {
             background-color: #5a7fba;
         }
-
-        .dark-red{
+        .dark-red {
             color: darkred;
         }
     </style>
 </head>
 <body onload="greeting()">
-  
     <header>
         <div class="header-buttons">
             <button class="header-button" id="homeButton">Home</button>
@@ -316,7 +335,13 @@
                     <button onclick="showPage('tablePage')">Table Comparison</button>
                 </div>
             </div>
-            <button class="header-button" id="prosConsButton" onclick="showPage('prosConsPage')">Pros and Cons</button> <!-- new pageeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee -->
+            <div class="dropdown">
+                <button class="header-button" id="prosConsButton">Pros and Cons ▼</button>
+                <div class="dropdown-content" id="prosConsDropdown">
+                    <button onclick="showPage('prosPage')">Pros</button>
+                    <button onclick="showPage('consPage')">Cons</button>
+                </div>
+            </div>
             <button class="header-button" id="referenceButton" onclick="showPage('referencePage')">References</button>
         </div>
         <h1>CS1102_The Mechanism and Applications of Blockchain</h1>
@@ -326,52 +351,38 @@
 
     <main>
         <div id="homePage" class="page active-page">
-             <div id="message"> !</div>
-                 <h3>Do you know what are Blocks?</h3>
+            <div id="message"> !</div>
+            <h3>Do you know what are Blocks?</h3>
             <p>Blocks are a continuously growing list of ordered records. These blocks “are linked using cryptography. Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data.</p>
             <h3>What is Blockchain?</h3>
-            <p>Blockchain is a public, digital ledger which tracks real-time movements and transactions of assets. Each transaction is a single “block”, and each block links together to form a “chain” known as a “blockchain”. Encrypted data in the blocks are linked with one another permanently. A blockchain is a decentralized database that keeps a continuously growing list of ordered records called blocks. It records transactions of multiple computers, which record cannot be altered retroactively without modifying all corresponding subsequent blocks and networks. Each transaction is visible to participants within the network. It creates the audit history of each transaction and keeps records and reviews. When new data is added to the network, it is required to verify the legitimacy of the data according to the economic incentives or authority of the majority of nodes. This process is named the consensus mechanism. Cryptographic techniques secure the data in the blockchain, which makes it complicated to tamper with. Once the consensus is obtained, a new block will be created along the chain. All nodes will thereby be updated.
-</p> 
-           
+            <p>Blockchain is a public, digital ledger which tracks real-time movements and transactions of assets. Each transaction is a single “block”, and each block links together to form a “chain” known as a “blockchain”. Encrypted data in the blocks are linked with one another permanently. A blockchain is a decentralized database that keeps a continuously growing list of ordered records called blocks. It records transactions of multiple computers, which record cannot be altered retroactively without modifying all corresponding subsequent blocks and networks. Each transaction is visible to participants within the network. It creates the audit history of each transaction and keeps records and reviews. When new data is added to the network, it is required to verify the legitimacy of the data according to the economic incentives or authority of the majority of nodes. This process is named the consensus mechanism. Cryptographic techniques secure the data in the blockchain, which makes it complicated to tamper with. Once the consensus is obtained, a new block will be created along the chain. All nodes will thereby be updated.</p>
             <button id="clickMe">How Blockchain Works?</button>
             <div id="Showmore">
-            <h3>How Blockchain Works?</h3>
-            <p>Blockchain begins with the data exchanged between two parties in the form of money, deeds, contracts, customer details, medical records, or any other asset in digital form. Verification is required. The duration of the step taken will depend on the network’s parameters, which will be undertaken instantly or transcribed into secured records and pending transactions in the queue. The computers or servers in the network will then determine the transaction's validity according to the network rules.
-</p>
-           
-            <p>A block contains a header referencing the previous block’s hash and the transactions. A hash contains 8 bytes using the algorithm agreed upon by the network. The linked hash provides security and interdependency of the chain. Before adding to form the block in the blockchain, it must be first validated. One of the methods is through proof consensus mechanisms (Proof of Work / Proof of Stake), solving the mathematical puzzle from the block’s header. Miners make extra changes to a variable to solve the blocks until it satisfies the requirements of the entire network; this is named “proof of work”. If someone maliciously attempts to manipulate the block and submit to the chain, the hash function will change to defence. The other nodes will then reject the block from entering the major chain in order to prevent corruption.
-</p>
-               
-            <p>When the block is verified, the block is distributed to the entire network. The miner will be rewarded. Each node adds the corresponding node to the majority chain.</p>
-        
-           
-           <img src="how blockchain works.png" alt="The flow of blockchain" style="max-width: 100%; height: auto; display: block; margin: auto;">
-<p style="text-align: center;">Image source: <a href="https://www.alwin.io/blockchain-vs-database-understanding-the-differences">Blockchain vs. Database: Understanding the Differences</a></p>
-      </div>
+                <h3>How Blockchain Works?</h3>
+                <p>Blockchain begins with the data exchanged between two parties in the form of money, deeds, contracts, customer details, medical records, or any other asset in digital form. Verification is required. The duration of the step taken will depend on the network’s parameters, which will be undertaken instantly or transcribed into secured records and pending transactions in the queue. The computers or servers in the network will then determine the transaction's validity according to the network rules.</p>
+                <p>A block contains a header referencing the previous block’s hash and the transactions. A hash contains 8 bytes using the algorithm agreed upon by the network. The linked hash provides security and interdependency of the chain. Before adding to form the block in the blockchain, it must be first validated. One of the methods is through proof consensus mechanisms (Proof of Work / Proof of Stake), solving the mathematical puzzle from the block’s header. Miners make extra changes to a variable to solve the blocks until it satisfies the requirements of the entire network; this is named “proof of work”. If someone maliciously attempts to manipulate the block and submit to the chain, the hash function will change to defence. The other nodes will then reject the block from entering the major chain in order to prevent corruption.</p>
+                <p>When the block is verified, the block is distributed to the entire network. The miner will be rewarded. Each node adds the corresponding node to the majority chain.</p>
+                <img src="how blockchain works.png" alt="The flow of blockchain" style="max-width: 100%; height: auto; display: block; margin: auto;">
+                <p style="text-align: center;">Image source: <a href="https://www.alwin.io/blockchain-vs-database-understanding-the-differences">Blockchain vs. Database: Understanding the Differences</a></p>
+            </div>
         </div>
 
         <div id="transactionPage" class="page">
             <h2>I wanna die</h2>
-            
         </div>
-            
+
         <div id="bitcoinPage" class="page">
             <h2>Bitcoin Analysis</h2>
             <h3>Consensus Mechanism: Proof-of-Work (PoW)</h3>
             <p>Miners are required to find a random number that makes the hash have a leading number of zeros to finish the crypto-puzzle. The complexity of the puzzle is adjusted every 2 weeks to maintain the block time around 10 minutes (Nakamoto, n.d.). Hence, Bitcoin applies PoW to ensure that no individual can control the network.</p>
-            
             <h3>Transaction Speed and Scalability</h3>
             <p>Transactions are grouped into blocks added every ~10 minutes. Merkle Trees compress transactions into a single root hash to save storage. However, Bitcoin processes only approximately 7 transactions per second, which is relatively slow (How Bitcoin Can Scale | River Learn - Bitcoin Basics, n.d.).</p>
-            
             <h3>Privacy and Anonymity</h3>
             <p>When executing a transaction, users employ different random-looking (i.e., one-time) pseudonymous public keys (i.e., addresses) to protect their privacy. Privacy is protected due to the randomness as long as the addresses remain unlinked to the user’s identity (Buczak, 2024).</p>
-            
             <h3>Smart Contracts and Programmability</h3>
             <p>Only simple scripting rules are applied, such as unlocking transactions based on the specific date (Script - Bitcoin Wiki, n.d.). The complexity of the logic is not as high as in other cryptocurrencies, hence, building complex applications like NFTs is not feasible.</p>
-            
             <h3>Energy Efficiency</h3>
             <p>Since PoW is used, it requires consuming massive amounts of electricity for mining (Cambridge Blockchain Network Sustainability Index: CBECI, n.d.). Although energy consumption is high, security is ensured. This issue might be mitigated by using renewable energy.</p>
-            
             <button class="quiz-button" data-quiz="bitcoin">Take Quiz</button>
         </div>
 
@@ -379,19 +390,14 @@
             <h2>Ethereum Analysis</h2>
             <h3>Consensus Mechanism: Proof-of-Stake (PoS)</h3>
             <p>PoS is a mechanism used by Ethereum to validate transactions and create new blocks without relying on PoW. Validators are chosen to propose and attest to new blocks via a random selection algorithm, weighted by the amount of ETH staked and time since the last selection (Proof-of-stake (POS), n.d.). Other validators verify the blocks and vote. A block becomes irreversible once confirmed.</p>
-            
             <h3>Transaction Speed and Scalability</h3>
             <p>ETH uses sharding and rollups to increase transaction speed. Data Sharding divides Ethereum’s blockchain into smaller parallel shards. Rollups process transactions off-chain, bundle them, compress the data onto Ethereum, and provide validity proofs for verification. Ethereum’s transaction speed targets to reach around 100,000 transactions per second, but currently the TPS stays at 173.6 (Sergeenkov, 2024).</p>
-            
             <h3>Privacy and Anonymity</h3>
             <p>ETH uses zk-SNARKs, Tornado Cash, and Stealth Addresses to provide a trustworthy system (Brown, 2024). Zk-SNARKs and Tornado Cash can be used together to hide transaction details. Zk-SNARKs generates a new encrypted address to prove ownership without leaking personal information, while Tornado Cash acts as a decentralized mixer to enhance privacy.</p>
-            
             <h3>Smart Contracts and Programmability</h3>
             <p>ETH utilizes Turing-complete smart contracts, which are compiled into EVM bytecode and auto-execute when conditions are met (Team, 2024). These contracts run on the Ethereum Virtual Machine (EVM). The EVM supports loops, conditional logic, and complex computations, making its programmability highly flexible.</p>
-            
             <h3>Energy Efficiency</h3>
             <p>Due to the adoption of PoS, validators secure the network by staking ETH, not by solving complex crypto-puzzles, reducing energy consumption by 99.95% (How Does Ethereum Work? An Introduction to ETH, n.d.). However, some argue that staking centralizes power among those with more ETH.</p>
-            
             <button class="quiz-button" data-quiz="ethereum">Take Quiz</button>
         </div>
 
@@ -399,19 +405,14 @@
             <h2>USDT Analysis</h2>
             <h3>Consensus Mechanism: Depends on the host chain</h3>
             <p>USDT itself is not a standalone blockchain; its consensus mechanism depends on the host chain. For example, ERC-20 USDT uses PoS, TRC-20 USDT uses DPoS, and the original USDT uses PoW. Thus, security varies.</p>
-            
             <h3>Transaction Speed and Scalability</h3>
             <p>Since USDT’s consensus mechanism relies on the host chain, transaction speed and scalability vary. For instance, it is slower on ERC-20 USDT (173.6 TPS) than on SPL-based chains (65,000 TPS) (Ledger, 2025).</p>
-            
             <h3>Privacy and Anonymity</h3>
             <p>USDT records transactions on transparent ledgers, allowing anyone to trace them. While different blockchains offer varying privacy systems (e.g., pseudonymous addresses, mixers, decentralized exchanges), USDT’s privacy remains very low due to traceability.</p>
-            
             <h3>Smart Contracts and Programmability</h3>
             <p>USDT itself is not programmable and is compatible with the host chain’s apps. It lacks built-in smart contracts. However, it follows the host blockchain’s smart contract rules. Despite not being programmable, USDT is often integrated into programmable ecosystems.</p>
-            
             <h3>Energy Efficiency</h3>
             <p>Since USDT’s consensus mechanism relies on the host chain, energy efficiency varies by blockchain. For example, it consumes less energy on PoS chains (e.g., ERC-20) and more on PoW chains (e.g., Bitcoin/original USDT). Its eco-friendliness depends on the underlying blockchain.</p>
-            
             <button class="quiz-button" data-quiz="usdt">Take Quiz</button>
         </div>
 
@@ -466,66 +467,73 @@
             </div>
         </div>
 
-        <div id="prosConsPage" class="page"> <!-- pros and cons page , there is much more to be added !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-            <h2>Pros and Cons of Blockchain Technology</h2>
-            <div class="pros-cons">
-                <h3>Pros</h3>
-                <ul>
-                    <li><span class="dark-red">Decentralization</span>: Blockchain distribute decision-making and data storage across a network of particiapnts instead of storing in a single centralized authority. Reducing the risk of single points of failure and censorhsip and making the whole system more resilient. Decentraliztion reply on the network consensus and shared ledger to validate transaction. The real-time and sahred view of data to all parties redcue error and inconsistencies</li>
-                    <br>
-                    <li><span class="dark-red">Transparency</span>: All transactions are recorded on a public ledger, which is visvible and verifiable by all participants. This enhance trust among users and stakeholders as each transaction can be traced and audited.</li>
-                    <br>
-                    <li><span class="dark-red">Security</span>: The application of advanced cryptographic techniques has enhace the security by encrypting and linked through cryptopgrahic hashes. Hashing transforms data into unique a lsit of string, it will be changed if the input is modified. this make it diffcult to alter any recorded data without being detected, futher enhance the security. </li>
-                    <br>
-                    <li><span class="dark-red">Immutability</span>: Once data is recorded, it cannot be changed or delted, Any attempt to alter will make tampering evident and rejectured by the network. Yhis immutability ensure data integrity and accuracy. </li>
-                    <br>
-                    <li><span class="dark-red">Efficiency</span>: Streamlines processes by eliminating intermediaries.</li>
-                </ul>
-                <h3>Cons</h3>
-                <ul>
-                    <li><span class="dark-red">Scalability</span>: Current blockchain networks struggle with high transaction volumes.</li>
-                    <br>
-                    <li><span class="dark-red">Energy Consumption</span>: Proof-of-Work blockchains require significant computational power.</li>
-                    <br>
-                    <li><span class="dark-red">Complexity</span>: Understanding and implementing blockchain can be challenging.</li>
-                    <br>
-                    <li><span class="dark-red">Regulatory Uncertainty</span>: Legal frameworks are still evolving, leading to potential risks.</li>
-                    <br>
-                    <li><span class="dark-red">Cost</span>: Transaction fees can be high during peak times.</li>
-                </ul>
-            </div>
+        <div id="prosPage" class="page">
+            <h2>Advantages of Blockchain Technology</h2>
+            <ul>
+                <li><span class="dark-red">Decentralization</span>: Blockchain distributes decision-making and data storage across a network of participants instead of storing in a single centralized authority. Reducing the risk of single points of failure and censorship and making the whole system more resilient. Decentralization relies on the network consensus and shared ledger to validate transactions. The real-time and shared view of data to all parties reduces errors and inconsistencies.</li>
+                <img src="https://github.com/CS1102groupproject/CS1102_Project/blob/main/benefits%20of%20blockchain.png?raw=true" style="max-width: 8%; height: auto;">
+
+                <br>
+                <li><span class="dark-red">Transparency</span>: All transactions are recorded on a public ledger, which is visible and verifiable by all participants. This enhances trust among users and stakeholders as each transaction can be traced and audited. For example: the blockchain is used to trace funds in real time, this ensures that aid reaches intended beneficiaries and reduces the possibility of fraud.</li>
+                <br>
+                <li><span class="dark-red">Security</span>: The application of advanced cryptographic techniques has enhanced security by encrypting and linking through cryptographic hashes. Hashing transforms data into a unique list of strings; it will be changed if the input is modified. This makes it difficult to alter any recorded data without being detected, further enhancing security.</li>
+                <br>
+                <li><span class="dark-red">Immutability</span>: Once data is recorded, it cannot be changed or deleted. This immutability is ensured by cryptographic hashing and consensus mechanisms like Proof of Work or Proof of Stake, which link blocks in a chain. Any attempt to alter will make tampering evident and rejected by the network. This immutability ensures data integrity and accuracy.</li>
+                <br>
+                <li><span class="dark-red">Efficiency</span>: Blockchain can streamline processes as it eliminates intermediaries and automates transactions with smart contracts. This results in less delay, lower transaction fees, and minimizes human errors. For example, it enables faster settlement and real-time tracking in supply chain management, increasing operational effectiveness and cutting costs.</li>
+            </ul>
+        </div>
+
+        <div id="consPage" class="page">
+            <h2>Disadvantages of Blockchain Technology</h2>
+            <img src="cons_image.jpg" alt="Cons of Blockchain" style="max-width: 100%; height: auto;">
+            <ul>
+                <li><span class="dark-red">Scalability</span>: Managing large transaction volumes is challenging for many blockchain networks. Throughput is limited by traditional blockchains like Bitcoin and Ethereum, which need each node to validate and retain every transaction. Compared to centralized systems like Visa, which can process hundreds of transactions per second, Bitcoin handles just 7–10 transactions per second. During peak hours, this scalability problem causes network congestion, delayed transaction confirmations, and increased costs.</li>
+                <br>
+                <li><span class="dark-red">Energy Consumption</span>: Bitcoin and other Proof-of-Work (PoW) blockchains use much electricity because mining requires a lot of processing power. One transaction requires as much electricity as the typical US household uses in over two months. Environmental concerns are raised from the problem of high energy usage, which has also led to governmental scrutiny and, in certain places, crypto mining moratoriums. A more energy-efficient substitute is provided by Proof-of-Stake (PoS) systems, which significantly lower the amount of power used for each transaction.</li>
+                <br>
+                <li><span class="dark-red">Complexity</span>: The implementation and maintenance of blockchain technology requires specific technical expertise due to its complexity. It is difficult for developers and consumers who are not familiar with the technology to use. Its complexity makes it harder for wider adoption. Mistakes and inefficiencies may result from inappropriate handling. Continuous efforts are being made to streamline blockchain interfaces and offer educational materials, which lessen these difficulties.</li>
+                <br>
+                <li><span class="dark-red">Regulatory Uncertainty</span>: Blockchain's legal and regulatory landscape is still developing and differs greatly between nations. Many nations lack clear regulations. Regulatory challenges in emerging economies can hinder adoption and raise compliance costs. These obstacles include inconsistent laws, inadequate infrastructure, and security concerns. While a lack of regulation might put consumers at risk, too onerous or unclear restrictions may hinder innovation. To strike a balance between control and innovation, regulatory frameworks must be unified and flexible.</li>
+                <br>
+                <li><span class="dark-red">Cost</span>: During periods of network congestion, blockchain transaction fees can rise significantly due to limited block sizes and slower processing times, forcing users to pay higher fees to prioritize their transactions. This makes blockchain less practical for small or frequent payments and hinders its scalability as a payment solution. The analysis draws on expert insights and case studies to outline both the benefits and challenges of blockchain technology, reflecting its current state and ongoing advancements.</li>
+            </ul>
         </div>
 
         <div id="referencePage" class="page">
-            <h2>References</h2>
-            <ol class="reference-list">
-                <li>Nakamoto, S. (n.d.). Bitcoin: A Peer-to-Peer Electronic Cash System. <a href="https://bitcoin.org/bitcoin.pdf" target="_blank">https://bitcoin.org/bitcoin.pdf</a></li>
-                <li>How Bitcoin can scale | River Learn - Bitcoin Basics. (n.d.). River. <a href="https://river.com/learn/how-bitcoin-can-scale/" target="_blank">https://river.com/learn/how-bitcoin-can-scale/</a></li>
-                <li>Buczak, A. (2024, December 30). Is Bitcoin anonymous? The myth of anonymity debunked. ULAM LABS. <a href="https://www.ulam.io/blog/is-cryptocurrency-anonymous#" target="_blank">https://www.ulam.io/blog/is-cryptocurrency-anonymous#</a></li>
-                <li>Script - Bitcoin Wiki. (n.d.). <a href="https://en.bitcoin.it/wiki/Script" target="_blank">https://en.bitcoin.it/wiki/Script</a></li>
-                <li>Cambridge Blockchain Network Sustainability Index: CBECI. (n.d.). <a href="https://ccaf.io/cbnsi/cbeci" target="_blank">https://ccaf.io/cbnsi/cbeci</a></li>
-                <li>Proof-of-stake (POS). (n.d.). ethereum.org. <a href="https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/" target="_blank">https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/</a></li>
-                <li>Sergeenkov, A. (2024, October 17). Ethereum’s surge roadmap targets 100,000+ transactions per second. Forbes. <a href="https://www.forbes.com/sites/digital-assets/2024/10/17/ethereums-surge-roadmap-targets-100000-transactions-per-second/" target="_blank">https://www.forbes.com/sites/digital-assets/2024/10/17/ethereums-surge-roadmap-targets-100000-transactions-per-second/</a></li>
-                <li>Brown, S. (2024, December 9). Privacy in Ethereum — Stealth addresses - Simon Brown - medium. Medium. <a href="https://simbro.medium.com/privacy-in-ethereum-stealth-addresses-f05016109010" target="_blank">https://simbro.medium.com/privacy-in-ethereum-stealth-addresses-f05016109010</a></li>
-                <li>Team, L. (2024, November 21). How EVM compiles smart contracts: A detailed explanation. LCX. <a href="https://www.lcx.com/how-evm-compiles-smart-contracts-explained/" target="_blank">https://www.lcx.com/how-evm-compiles-smart-contracts-explained/</a></li>
-                <li>How does Ethereum work? An introduction to ETH. (n.d.). <a href="https://crypto.com/en/university/how-does-ethereum-work-introduction-to-eth" target="_blank">https://crypto.com/en/university/how-does-ethereum-work-introduction-to-eth</a></li>
-                <li>Ledger. (2025, February 6). Everything you need to know about the SPL Ecosystem | Ledger. <a href="https://www.ledger.com/academy/topics/blockchain/everything-you-need-to-know-about-the-spl-ecosystem" target="_blank">https://www.ledger.com/academy/topics/blockchain/everything-you-need-to-know-about-the-spl-ecosystem</a></li>
-                <li>McKinsey & Company. (2024). What is blockchain technology? <a href="https://www.mckinsey.com/featured-insights/mckinsey-explainers/what-is-blockchain" target="_blank">https://www.mckinsey.com/featured-insights/mckinsey-explainers/what-is-blockchain</a></li>
-                <li>Deloitte. (n.d.). Blockchain: How it works. <a href="https://www2.deloitte.com/content/dam/Deloitte/us/Documents/financial-services/us-fsi-blockchain-how-it-works.pdf" target="_blank">https://www2.deloitte.com/content/dam/Deloitte/us/Documents/financial-services/us-fsi-blockchain-how-it-works.pdf</a></li>
-                <li>Alwin Technologies. (n.d.). Blockchain vs. database: Understanding the differences. <a href="https://www.alwin.io/blockchain-vs-database-understanding-the-differences" target="_blank">https://www.alwin.io/blockchain-vs-database-understanding-the-differences</a></li>
-            </ol>
+            <div class="reference-page-content">
+                <div class="reference-image-container">
+                    <img src="https://raw.githubusercontent.com/CS1102groupproject/CS1102_Project/main/bitcoin-2007769_1280.jpg" alt="Bitcoin Reference Image">
+                    <div class="reference-image-caption">2023 6thEM 4:51</div>
+                </div>
+                <h2>References</h2>
+                <ol class="reference-list">
+                    <li>Nakamoto, S. (n.d.). Bitcoin: A Peer-to-Peer Electronic Cash System. <a href="https://bitcoin.org/bitcoin.pdf" target="_blank">https://bitcoin.org/bitcoin.pdf</a></li>
+                    <li>How Bitcoin can scale | River Learn - Bitcoin Basics. (n.d.). River. <a href="https://river.com/learn/how-bitcoin-can-scale/" target="_blank">https://river.com/learn/how-bitcoin-can-scale/</a></li>
+                    <li>Buczak, A. (2024, December 30). Is Bitcoin anonymous? The myth of anonymity debunked. ULAM LABS. <a href="https://www.ulam.io/blog/is-cryptocurrency-anonymous#" target="_blank">https://www.ulam.io/blog/is-cryptocurrency-anonymous#</a></li>
+                    <li>Script - Bitcoin Wiki. (n.d.). <a href="https://en.bitcoin.it/wiki/Script" target="_blank">https://en.bitcoin.it/wiki/Script</a></li>
+                    <li>Cambridge Blockchain Network Sustainability Index: CBECI. (n.d.). <a href="https://ccaf.io/cbnsi/cbeci" target="_blank">https://ccaf.io/cbnsi/cbeci</a></li>
+                    <li>Proof-of-stake (POS). (n.d.). ethereum.org. <a href="https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/" target="_blank">https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/</a></li>
+                    <li>Sergeenkov, A. (2024, October 17). Ethereum’s surge roadmap targets 100,000+ transactions per second. Forbes. <a href="https://www.forbes.com/sites/digital-assets/2024/10/17/ethereums-surge-roadmap-targets-100000-transactions-per-second/" target="_blank">https://www.forbes.com/sites/digital-assets/2024/10/17/ethereums-surge-roadmap-targets-100000-transactions-per-second/</a></li>
+                    <li>Brown, S. (2024, December 9). Privacy in Ethereum — Stealth addresses - Simon Brown - medium. Medium. <a href="https://simbro.medium.com/privacy-in-ethereum-stealth-addresses-f05016109010" target="_blank">https://simbro.medium.com/privacy-in-ethereum-stealth-addresses-f05016109010</a></li>
+                    <li>Team, L. (2024, November 21). How EVM compiles smart contracts: A detailed explanation. LCX. <a href="https://www.lcx.com/how-evm-compiles-smart-contracts-explained/" target="_blank">https://www.lcx.com/how-evm-compiles-smart-contracts-explained/</a></li>
+                    <li>How does Ethereum work? An introduction to ETH. (n.d.). <a href="https://crypto.com/en/university/how-does-ethereum-work-introduction-to-eth" target="_blank">https://crypto.com/en/university/how-does-ethereum-work-introduction-to-eth</a></li>
+                    <li>Ledger. (2025, February 6). Everything you need to know about the SPL Ecosystem | Ledger. <a href="https://www.ledger.com/academy/topics/blockchain/everything-you-need-to-know-about-the-spl-ecosystem" target="_blank">https://www.ledger.com/academy/topics/blockchain/everything-you-need-to-know-about-the-spl-ecosystem</a></li>
+                    <li>McKinsey & Company. (2024). What is blockchain technology? <a href="https://www.mckinsey.com/featured-insights/mckinsey-explainers/what-is-blockchain" target="_blank">https://www.mckinsey.com/featured-insights/mckinsey-explainers/what-is-blockchain</a></li>
+                    <li>Deloitte. (n.d.). Blockchain: How it works. <a href="https://www2.deloitte.com/content/dam/Deloitte/us/Documents/financial-services/us-fsi-blockchain-how-it-works.pdf" target="_blank">https://www2.deloitte.com/content/dam/Deloitte/us/Documents/financial-services/us-fsi-blockchain-how-it-works.pdf</a></li>
+                    <li>Alwin Technologies. (n.d.). Blockchain vs. database: Understanding the differences. <a href="https://www.alwin.io/blockchain-vs-database-understanding-the-differences" target="_blank">https://www.alwin.io/blockchain-vs-database-understanding-the-differences</a></li>
+                </ol>
+            </div>
         </div>
-        
     </main>
 
     <footer>
         <p>Learn more about our Team</p>
     </footer>
 
-    <!-- Quiz Modals -->
     <div id="bitcoinQuizModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close">×</span>
             <h3>Bitcoin Quiz</h3>
             <form class="quiz-form">
                 <div class="question" data-correct="B">
@@ -554,7 +562,7 @@
 
     <div id="ethereumQuizModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close">×</span>
             <h3>Ethereum Quiz</h3>
             <form class="quiz-form">
                 <div class="question" data-correct="B">
@@ -583,7 +591,7 @@
 
     <div id="usdtQuizModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close">×</span>
             <h3>USDT Quiz</h3>
             <form class="quiz-form">
                 <div class="question" data-correct="C">
@@ -610,16 +618,24 @@
         </div>
     </div>
 
-<script>
+    <script>
         document.getElementById('comparisonButton').addEventListener('click', function(e) {
             e.stopPropagation();
             const dropdown = document.getElementById('comparisonDropdown');
             dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
         });
 
+        document.getElementById('prosConsButton').addEventListener('click', function(e) {
+            e.stopPropagation();
+            const dropdown = document.getElementById('prosConsDropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        });
+
         document.addEventListener('click', function(e) {
             if (!e.target.closest('.dropdown')) {
-                document.getElementById('comparisonDropdown').style.display = 'none';
+                document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+                    dropdown.style.display = 'none';
+                });
             }
         });
 
@@ -642,30 +658,36 @@
         function toggleFeatureHighlight(feature) {
             const buttons = document.querySelectorAll('.filter-btn');
             const table = document.getElementById('comparisonTable');
-            const allRows = Array.from(table.querySelectorAll('tr:not(:first-child)'));
-            const activeRow = allRows.find(row => 
-                row.querySelector('td:first-child').textContent.trim() === feature
-            );
+            const allRows = table.querySelectorAll('tr');
 
-            buttons.forEach(btn => btn.classList.remove('active'));
             const currentBtn = Array.from(buttons).find(b => b.textContent.trim() === feature);
             const wasActive = currentBtn.classList.contains('active');
-            
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+
             if (!wasActive) {
                 currentBtn.classList.add('active');
                 table.classList.add('hide-features');
                 allRows.forEach(row => {
-                    row.style.display = row === activeRow ? '' : 'none';
+                    const firstCell = row.querySelector('td:first-child');
+                    if (firstCell && firstCell.textContent.trim() === feature) {
+                        row.style.display = '';
+                    } else if (row.querySelector('th')) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
                 });
             } else {
                 table.classList.remove('hide-features');
-                allRows.forEach(row => row.style.display = '');
+                allRows.forEach(row => {
+                    row.style.display = '';
+                });
             }
         }
 
         showPage('homePage');
 
-        // Quiz functionality
         document.querySelectorAll('.quiz-button').forEach(button => {
             button.addEventListener('click', function() {
                 const quiz = this.getAttribute('data-quiz');
@@ -704,12 +726,15 @@
                     const selected = question.querySelector('input[type="radio"]:checked');
                     if (selected && selected.value === correct) {
                         score++;
-                        question.style.backgroundColor = '#d4edda'; // light green
+                        question.style.backgroundColor = '#d4edda';
                     } else {
-                        question.style.backgroundColor = '#f8d7da'; // light red
+                        question.style.backgroundColor = '#f8d7da';
                     }
                 });
                 resultsDiv.innerHTML = `<p>You got ${score} out of ${questions.length} correct.</p>`;
             });
         });
     </script>
+    
+</body>
+</html>
