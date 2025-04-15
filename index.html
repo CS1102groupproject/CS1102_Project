@@ -23,6 +23,7 @@
             background-color: #f7f7f7;
             color: #333;
             overflow-x: hidden;
+            font-size: 1.1rem; /* Increased from default ~16px to ~17.6px */
         }
         header {
             position: relative;
@@ -46,7 +47,7 @@
             padding: 0.5rem 1.5rem;
             border-radius: 25px;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 1.1rem; /* Increased from 1rem */
             transition: all 0.3s ease;
             font-family: 'Times', serif;
             position: relative;
@@ -54,6 +55,7 @@
         .header-button:hover {
             background: white;
             color: #6a89cc;
+            transform: scale(1.05);
         }
         .dropdown {
             position: relative;
@@ -82,6 +84,7 @@
             cursor: pointer;
             transition: all 0.2s ease;
             font-family: 'Times', serif;
+            font-size: 1.1rem; /* Increased from default */
         }
         .dropdown-content hr {
             margin: 0;
@@ -112,16 +115,22 @@
         .active-page {
             display: block;
         }
+        h1 {
+            font-size: 2.2rem; /* Increased from ~2rem */
+        }
         h2 {
             color: #34495e;
             margin-bottom: 1rem;
+            font-size: 1.8rem; /* Increased from ~1.5rem */
         }
         h3 {
             color: #2c3e50;
             margin: 1.5rem 0 0.5rem;
+            font-size: 1.4rem; /* Increased from ~1.2rem */
         }
-        p {
-            line-height: 1.6;
+        p, li {
+            font-size: 1.15rem; /* Increased from 1rem */
+            line-height: 1.8; /* Slightly increased for readability */
             margin-bottom: 1.5rem;
             overflow-wrap: break-word;
             max-width: 100%;
@@ -133,13 +142,14 @@
             padding: 0.75rem 1.5rem;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s;
+            font-size: 1.1rem; /* Increased from 1rem */
+            transition: background-color 0.3s, transform 0.2s;
             font-family: 'Times', serif;
             text-transform: uppercase;
         }
         button:hover {
             background-color: #5a7fba;
+            transform: scale(1.05);
         }
         footer {
             background: #34495e;
@@ -147,6 +157,7 @@
             text-align: center;
             padding: 1rem;
             width: 100%;
+            font-size: 1.1rem; /* Increased from default */
         }
         #Showmore {
             display: none;
@@ -174,6 +185,7 @@
             word-break: break-word;
             min-width: 200px;
             max-width: 400px;
+            font-size: 1.1rem; /* Increased from default */
         }
         .comparison-table th {
             background-color: #6a89cc;
@@ -204,6 +216,10 @@
             transition: all 0.3s;
             text-align: center;
             white-space: nowrap;
+            font-size: 1.1rem; /* Increased from default */
+        }
+        .filter-btn:hover {
+            transform: scale(1.05);
         }
         .filter-btn.active {
             background: #34495e;
@@ -232,7 +248,7 @@
         }
         .reference-image-caption {
             text-align: center;
-            font-size: 0.8rem;
+            font-size: 0.9rem; /* Increased from 0.8rem */
             margin-top: 5px;
             color: #666;
         }
@@ -242,16 +258,17 @@
         }
         @media (max-width: 768px) {
             .comparison-table {
-                font-size: 0.9rem;
+                font-size: 1rem; /* Increased from 0.9rem */
             }
             .comparison-table th,
             .comparison-table td {
                 padding: 0.8rem;
                 min-width: 160px;
+                font-size: 1rem; /* Increased from default */
             }
             .filter-btn {
                 padding: 0.5rem;
-                font-size: 0.9rem;
+                font-size: 1rem; /* Increased from 0.9rem */
             }
         }
         .modal {
@@ -293,12 +310,14 @@
         label {
             display: block;
             margin: 5px 0;
+            font-size: 1.1rem; /* Increased from default */
         }
         .quiz-results {
             margin-top: 20px;
             padding: 10px;
             background-color: #f0f0f0;
             border-radius: 5px;
+            font-size: 1.1rem; /* Increased from default */
         }
         .check-answers {
             background-color: #6a89cc;
@@ -307,16 +326,29 @@
             padding: 0.75rem 1.5rem;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s;
+            font-size: 1.1rem; /* Increased from 1rem */
+            transition: background-color 0.3s, transform 0.2s;
             font-family: 'Times', serif;
             text-transform: uppercase;
         }
         .check-answers:hover {
             background-color: #5a7fba;
+            transform: scale(1.05);
         }
         .dark-red {
             color: darkred;
+        }
+        .pros-cons ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .pros-cons li {
+            margin-bottom: 1.5rem;
+        }
+        .pros-cons h3 {
+            margin-top: 2rem;
+            border-bottom: 2px solid #6a89cc;
+            padding-bottom: 0.5rem;
         }
     </style>
 </head>
@@ -467,37 +499,30 @@
             </div>
         </div>
 
-        <div id="prosPage" class="page">
+        <div id="prosPage" class="page pros-cons">
             <h2>Advantages of Blockchain Technology</h2>
             <ul>
                 <li><span class="dark-red">Decentralization</span>: Blockchain distributes decision-making and data storage across a network of participants instead of storing in a single centralized authority. Reducing the risk of single points of failure and censorship and making the whole system more resilient. Decentralization relies on the network consensus and shared ledger to validate transactions. The real-time and shared view of data to all parties reduces errors and inconsistencies.</li>
-                <img src="https://github.com/CS1102groupproject/CS1102_Project/blob/main/benefits%20of%20blockchain.png?raw=true" style="max-width: 8%; height: auto;">
-
-                <br>
+                <img src="https://raw.githubusercontent.com/CS1102groupproject/CS1102_Project/main/benefits%20of%20blockchain.png" alt="Benefits of Blockchain" style="max-width: 10%; height: auto;">
                 <li><span class="dark-red">Transparency</span>: All transactions are recorded on a public ledger, which is visible and verifiable by all participants. This enhances trust among users and stakeholders as each transaction can be traced and audited. For example: the blockchain is used to trace funds in real time, this ensures that aid reaches intended beneficiaries and reduces the possibility of fraud.</li>
-                <br>
                 <li><span class="dark-red">Security</span>: The application of advanced cryptographic techniques has enhanced security by encrypting and linking through cryptographic hashes. Hashing transforms data into a unique list of strings; it will be changed if the input is modified. This makes it difficult to alter any recorded data without being detected, further enhancing security.</li>
-                <br>
                 <li><span class="dark-red">Immutability</span>: Once data is recorded, it cannot be changed or deleted. This immutability is ensured by cryptographic hashing and consensus mechanisms like Proof of Work or Proof of Stake, which link blocks in a chain. Any attempt to alter will make tampering evident and rejected by the network. This immutability ensures data integrity and accuracy.</li>
-                <br>
                 <li><span class="dark-red">Efficiency</span>: Blockchain can streamline processes as it eliminates intermediaries and automates transactions with smart contracts. This results in less delay, lower transaction fees, and minimizes human errors. For example, it enables faster settlement and real-time tracking in supply chain management, increasing operational effectiveness and cutting costs.</li>
             </ul>
+            <button class="quiz-button" data-quiz="pros">Take Quiz</button>
         </div>
 
-        <div id="consPage" class="page">
+        <div id="consPage" class="page pros-cons">
             <h2>Disadvantages of Blockchain Technology</h2>
-            <img src="cons_image.jpg" alt="Cons of Blockchain" style="max-width: 100%; height: auto;">
             <ul>
                 <li><span class="dark-red">Scalability</span>: Managing large transaction volumes is challenging for many blockchain networks. Throughput is limited by traditional blockchains like Bitcoin and Ethereum, which need each node to validate and retain every transaction. Compared to centralized systems like Visa, which can process hundreds of transactions per second, Bitcoin handles just 7–10 transactions per second. During peak hours, this scalability problem causes network congestion, delayed transaction confirmations, and increased costs.</li>
-                <br>
                 <li><span class="dark-red">Energy Consumption</span>: Bitcoin and other Proof-of-Work (PoW) blockchains use much electricity because mining requires a lot of processing power. One transaction requires as much electricity as the typical US household uses in over two months. Environmental concerns are raised from the problem of high energy usage, which has also led to governmental scrutiny and, in certain places, crypto mining moratoriums. A more energy-efficient substitute is provided by Proof-of-Stake (PoS) systems, which significantly lower the amount of power used for each transaction.</li>
-                <br>
+                <img src="https://raw.githubusercontent.com/CS1102groupproject/CS1102_Project/main/energy%20consumption%20of%20blockchain.png" alt="Energy Consumption of Blockchain" style="max-width: 10%; height: auto;">
                 <li><span class="dark-red">Complexity</span>: The implementation and maintenance of blockchain technology requires specific technical expertise due to its complexity. It is difficult for developers and consumers who are not familiar with the technology to use. Its complexity makes it harder for wider adoption. Mistakes and inefficiencies may result from inappropriate handling. Continuous efforts are being made to streamline blockchain interfaces and offer educational materials, which lessen these difficulties.</li>
-                <br>
                 <li><span class="dark-red">Regulatory Uncertainty</span>: Blockchain's legal and regulatory landscape is still developing and differs greatly between nations. Many nations lack clear regulations. Regulatory challenges in emerging economies can hinder adoption and raise compliance costs. These obstacles include inconsistent laws, inadequate infrastructure, and security concerns. While a lack of regulation might put consumers at risk, too onerous or unclear restrictions may hinder innovation. To strike a balance between control and innovation, regulatory frameworks must be unified and flexible.</li>
-                <br>
                 <li><span class="dark-red">Cost</span>: During periods of network congestion, blockchain transaction fees can rise significantly due to limited block sizes and slower processing times, forcing users to pay higher fees to prioritize their transactions. This makes blockchain less practical for small or frequent payments and hinders its scalability as a payment solution. The analysis draws on expert insights and case studies to outline both the benefits and challenges of blockchain technology, reflecting its current state and ongoing advancements.</li>
             </ul>
+            <button class="quiz-button" data-quiz="cons">Take Quiz</button>
         </div>
 
         <div id="referencePage" class="page">
@@ -531,6 +556,7 @@
         <p>Learn more about our Team</p>
     </footer>
 
+    <!-- Existing Quiz Modals -->
     <div id="bitcoinQuizModal" class="modal">
         <div class="modal-content">
             <span class="close">×</span>
@@ -611,6 +637,65 @@
                     <label><input type="radio" name="q3" value="A"> A) Yes, it has its own smart contract platform</label>
                     <label><input type="radio" name="q3" value="B"> B) No, it relies on the host chain</label>
                     <label><input type="radio" name="q3" value="C"> C) Only on Ethereum</label>
+                </div>
+            </form>
+            <button type="button" class="check-answers">Check Answers</button>
+            <div class="quiz-results"></div>
+        </div>
+    </div>
+
+    <!-- Quiz Modals for Pros and Cons -->
+    <div id="prosQuizModal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h3>Pros of Blockchain Quiz</h3>
+            <form class="quiz-form">
+                <div class="question" data-correct="B">
+                    <p>Question 1: What is one of the main advantages of blockchain's decentralization?</p>
+                    <label><input type="radio" name="q1" value="A"> A) It increases the risk of single points of failure.</label>
+                    <label><input type="radio" name="q1" value="B"> B) It reduces the risk of single points of failure.</label>
+                    <label><input type="radio" name="q1" value="C"> C) It makes the system less resilient.</label>
+                </div>
+                <div class="question" data-correct="B">
+                    <p>Question 2: How does blockchain enhance transparency?</p>
+                    <label><input type="radio" name="q2" value="A"> A) By hiding transactions from participants.</label>
+                    <label><input type="radio" name="q2" value="B"> B) By recording all transactions on a public ledger.</label>
+                    <label><input type="radio" name="q2" value="C"> C) By limiting access to transaction data.</label>
+                </div>
+                <div class="question" data-correct="B">
+                    <p>Question 3: What is a benefit of blockchain's immutability?</p>
+                    <label><input type="radio" name="q3" value="A"> A) Data can be easily altered.</label>
+                    <label><input type="radio" name="q3" value="B"> B) Data cannot be changed once recorded.</label>
+                    <label><input type="radio" name="q3" value="C"> C) Data is not secure.</label>
+                </div>
+            </form>
+            <button type="button" class="check-answers">Check Answers</button>
+            <div class="quiz-results"></div>
+        </div>
+    </div>
+
+    <div id="consQuizModal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h3>Cons of Blockchain Quiz</h3>
+            <form class="quiz-form">
+                <div class="question" data-correct="B">
+                    <p>Question 1: What is a major challenge for blockchain networks regarding scalability?</p>
+                    <label><input type="radio" name="q1" value="A"> A) They can handle large transaction volumes easily.</label>
+                    <label><input type="radio" name="q1" value="B"> B) They struggle with high transaction volumes.</label>
+                    <label><input type="radio" name="q1" value="C"> C) They have unlimited throughput.</label>
+                </div>
+                <div class="question" data-correct="B">
+                    <p>Question 2: Why is energy consumption a concern for some blockchains?</p>
+                    <label><input type="radio" name="q2" value="A"> A) Because they use Proof of Stake.</label>
+                    <label><input type="radio" name="q2" value="B"> B) Because mining in Proof of Work requires a lot of electricity.</label>
+                    <label><input type="radio" name="q2" value="C"> C) Because they are energy-efficient.</label>
+                </div>
+                <div class="question" data-correct="C">
+                    <p>Question 3: What makes blockchain technology complex?</p>
+                    <label><input type="radio" name="q3" value="A"> A) It requires no technical expertise.</label>
+                    <label><input type="radio" name="q3" value="B"> B) It is easy for anyone to use.</label>
+                    <label><input type="radio" name="q3" value="C"> C) It requires specific technical expertise.</label>
                 </div>
             </form>
             <button type="button" class="check-answers">Check Answers</button>
@@ -735,6 +820,5 @@
             });
         });
     </script>
-    
 </body>
 </html>
