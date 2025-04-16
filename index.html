@@ -816,6 +816,12 @@
             }
         }
 
+        document.getElementById('usesButton').addEventListener('click', function(e) {
+            e.stopPropagation();
+            const dropdown = document.getElementById('usesDropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        });
+        
         showPage('homePage');
 
         document.querySelectorAll('.quiz-button').forEach(button => {
