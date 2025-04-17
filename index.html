@@ -671,19 +671,18 @@
             </div>
         </div>
     </main>
-
 <footer>
-   
-        <span id="scrollToTop">Our Team</span>
-    
-
-    <script>
-       
-        document.getElementById('scrollToTop').onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-    </script>
+    <span id="scrollToTop" style="cursor:pointer;">Our Team</span>
 </footer>
+
+<script>
+    document.getElementById('scrollToTop').onclick = function(event) {
+        event.preventDefault(); 
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+</script>
+
+
 
     <!-- Existing Quiz Modals -->
     <div id="bitcoinQuizModal" class="modal">
