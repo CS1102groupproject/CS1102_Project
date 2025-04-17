@@ -676,6 +676,18 @@
                     <li>Improve your healthcare operations with Blockchain. Oracle Hong Kong SAR, PRC. (n.d.). <a href="https://www.oracle.com/hk/blockchain/what-is-blockchain/blockchain-in-healthcare/" target="_blank"> https://www.oracle.com/hk/blockchain/what-is-blockchain/blockchain-in-healthcare/</a></li>
                     <li>Reiff, N. (n.d.). How healthcare is applying blockchain technology. Investopedia. <a href="https://www.investopedia.com/tech/how-health-care-moving-toward-blockchain/" target="_blank"> https://www.investopedia.com/tech/how-health-care-moving-toward-blockchain/</a></li>
                 </ol>
+                <div id="comment-section">
+                    <h3>Leave a Comment</h3>
+                    <form id="comment-form">
+                        <label for="comment-input">Your Comment:</label>
+                        <textarea id="comment-input" rows="4" cols="50" placeholder="Type your comment here..."></textarea>
+                        <br>
+                        <button type="submit">Submit Comment</button>
+                    </form>
+                    <div id="comments-display">
+                        
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -933,6 +945,18 @@
             closeBtn.addEventListener('click', function() {
                 this.closest('.modal').style.display = 'none';
             });
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('comment-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents page reload
+            var commentText = document.getElementById('comment-input').value;
+            if (commentText.trim() !== '') { 
+                var commentElement = document.createElement('p');
+                commentElement.textContent = commentText; // Adds comment as text
+                document.getElementById('comments-display').appendChild(commentElement);
+                document.getElementById('comment-input').value = ''
+            }
+        });
         });
 
         window.addEventListener('click', function(event) {
