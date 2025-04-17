@@ -287,6 +287,7 @@
             height: 100%;
             background-color: rgba(0,0,0,0.5);
             overflow: auto;
+            pointer-events: auto;
         }
         .modal-content {
             background-color: white;
@@ -316,14 +317,14 @@
         label {
             display: block;
             margin: 5px 0;
-            font-size: 1.1rem; /* Increased from default */
+            font-size: 1.1rem; 
         }
         .quiz-results {
             margin-top: 20px;
             padding: 10px;
             background-color: #f0f0f0;
             border-radius: 5px;
-            font-size: 1.1rem; /* Increased from default */
+            font-size: 1.1rem; 
         }
         .check-answers {
             background-color: #6a89cc;
@@ -938,6 +939,32 @@
             if (event.target.classList.contains('modal')) {
                 event.target.style.display = 'none';
             }
+        });
+
+        // Strengthen modal click handling
+        document.querySelectorAll('.modal-content').forEach(content => {
+            content.addEventListener('click', function(event) {
+                event.stopPropagation();
+                event.preventDefault();
+            });
+        });
+
+// Prevent navigation in quiz labels
+        document.querySelectorAll('.quiz-form label').forEach(label => {
+            label.addEventListener('click', function(event) {
+                event.stopPropagation();
+                event.preventDefault();
+                const input = this.querySelector('input[type="radio"]');
+                if (input) {
+                    input.checked = true;
+                }
+            });
+        });
+
+// Debug click events
+        document.addEventListener('click', function(event) {
+            console.log('Clicked element:', event.target);
+            console.log('Parent elements:', event.target.closest('a'));
         });
 
         document.querySelectorAll('.check-answers').forEach(button => {
