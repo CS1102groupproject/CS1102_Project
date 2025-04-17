@@ -370,7 +370,10 @@
             font-size: 0.85rem; line-height: 0.5 ;
         }
         <ul style="text-align: left; font-size: 0.75rem; margin: 0; padding: 0;line-height:0.5;">
-   
+       #scrollToTop {
+            cursor: pointer;
+            color: #ffcc00;
+        }
      </style>
 </head>
 <body onload="greeting()">
@@ -670,9 +673,16 @@
     </main>
 
 <footer>
-    <div class="header-buttons">
-        <button class="header-button" id="homeButton" onclick="scrollToTop()">Our Team</button>
-    </div>
+   
+        <span id="scrollToTop">Our Team</span>
+    
+
+    <script>
+       
+        document.getElementById('scrollToTop').onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
 </footer>
 
     <!-- Existing Quiz Modals -->
