@@ -344,6 +344,10 @@
         .dark-red {
             color: darkred;
         }
+        .bold-colored {
+            color: darkblue;
+            font-weight: bold;
+        }
         .highlight {
             color: blue;
             font-weight: bold;
@@ -497,7 +501,8 @@
         </div>
         
         <div id="bitcoinPage" class="page">
-            <h2>Bitcoin Analysis</h2>
+            <h2><u>Bitcoin Analysis</u></h2>
+            <img src="https://github.com/CS1102groupproject/CS1102_Project/blob/main/bitcoin%20technology.png?raw=true" alt="Benefits of Blockchain" style="max-width: 15%; height: auto;">
             <h3>Consensus Mechanism: <span class="highlight">Proof-of-Work (PoW)</span></h3>
             <p>Miners are required to find a random number that makes the hash have a leading number of zeros, to finish the <span class="highlight">crypto-puzzle</span>. The complexity of the puzzle is adjusted every 2 weeks to maintain the <span class="highlight">block time</span> around 10 minutes (Nakamoto, n.d.). This difficulty adjustment ensures consistent block creation, preventing any single entity from dominating the process (Nadcab Labs, n.d.). Miners compete using computational power, solving complex mathematical problems to validate transactions and earn rewards. This decentralized mechanism secures the network, making it resistant to attacks and ensuring no individual can control the network.</p>
 
@@ -517,22 +522,24 @@
         </div>
 
         <div id="ethereumPage" class="page">
-            <h2>Ethereum Analysis</h2>
-            <h3>Consensus Mechanism: Proof-of-Stake (PoS)</h3>
+            <h2><u>Ethereum Analysis</u></h2>
+            <img src="https://github.com/CS1102groupproject/CS1102_Project/blob/main/etherum.png?raw=true" alt="Benefits of Blockchain" style="max-width: 15%; height: auto;">
+            <h3 class="bold-colored">Consensus Mechanism: Proof-of-Stake (PoS)</h3>
             <p>PoS is a mechanism used by Ethereum to validate transactions and create new blocks without relying on PoW. Validators are chosen to propose and attest to new blocks via a random selection algorithm, weighted by the amount of ETH staked and time since the last selection (Proof-of-stake (POS), n.d.). Other validators verify the blocks and vote. A block becomes irreversible once confirmed.</p>
-            <h3>Transaction Speed and Scalability</h3>
+            <h3 class="bold-colored">Transaction Speed and Scalability</h3>
             <p>ETH uses sharding and rollups to increase transaction speed. Data Sharding divides Ethereum’s blockchain into smaller parallel shards. Rollups process transactions off-chain, bundle them, compress the data onto Ethereum, and provide validity proofs for verification. Ethereum’s transaction speed targets to reach around 100,000 transactions per second, but currently the TPS stays at 173.6 (Sergeenkov, 2024).</p>
-            <h3>Privacy and Anonymity</h3>
+            <h3 class="bold-colored">Privacy and Anonymity</h3>
             <p>ETH uses zk-SNARKs, Tornado Cash, and Stealth Addresses to provide a trustworthy system (Brown, 2024). Zk-SNARKs and Tornado Cash can be used together to hide transaction details. Zk-SNARKs generates a new encrypted address to prove ownership without leaking personal information, while Tornado Cash acts as a decentralized mixer to enhance privacy.</p>
-            <h3>Smart Contracts and Programmability</h3>
+            <h3 class="bold-colored">Smart Contracts and Programmability</h3>
             <p>ETH utilizes Turing-complete smart contracts, which are compiled into EVM bytecode and auto-execute when conditions are met (Team, 2024). These contracts run on the Ethereum Virtual Machine (EVM). The EVM supports loops, conditional logic, and complex computations, making its programmability highly flexible.</p>
-            <h3>Energy Efficiency</h3>
+            <h3 class="bold-colored">Energy Efficiency</h3>
             <p>Due to the adoption of PoS, validators secure the network by staking ETH, not by solving complex crypto-puzzles, reducing energy consumption by 99.95% (How Does Ethereum Work? An Introduction to ETH, n.d.). However, some argue that staking centralizes power among those with more ETH.</p>
             <button class="quiz-button" data-quiz="ethereum">Take Quiz</button>
         </div>
 
         <div id="usdtPage" class="page">
-            <h2>USDT Analysis</h2>
+            <h2><u>USDT Analysis</u></h2>
+            <img src="https://github.com/CS1102groupproject/CS1102_Project/blob/main/USDT.png?raw=true" alt="Benefits of Blockchain" style="max-width: 15%; height: auto;">
             <h3>Consensus Mechanism: Depends on the <span class="highlight">host chain</span></h3>
             <p>USDT itself is not a standalone blockchain; its consensus mechanism depends on the <span class="highlight">host chain</span>. For example, ERC-20 USDT uses <span class="highlight">PoS</span>, TRC-20 USDT uses <span class="highlight">DPoS</span>, and the original USDT uses <span class="highlight">PoW</span>. Thus, security varies. Each <span class="highlight">host chain</span>’s consensus governs transaction validation. Ethereum’s <span class="highlight">PoS</span> ensures validator-driven security, while Tron’s <span class="highlight">DPoS</span> uses elected delegates for faster consensus. Bitcoin’s <span class="highlight">PoW</span>, used by Omni USDT, relies on mining, offering robust but slower security. This diversity lets USDT adapt to different blockchain strengths (Ledger, 2023).</p>
 
@@ -603,7 +610,7 @@
         </div>
 
         <div id="prosPage" class="page pros-cons">
-            <h2>Advantages of Blockchain Technology</h2>
+            <h2><u>Advantages of Blockchain Technology</u></h2>
             <ul>
                 <li><span class="dark-red">Decentralization</span>: Blockchain distributes decision-making and data storage across a network of participants instead of storing in a single centralized authority. Reducing the risk of single points of failure and censorship and making the whole system more resilient. Decentralization relies on the network consensus and shared ledger to validate transactions. The real-time and shared view of data to all parties reduces errors and inconsistencies.</li>
                 <img src="https://raw.githubusercontent.com/CS1102groupproject/CS1102_Project/main/benefits%20of%20blockchain.png" alt="Benefits of Blockchain" style="max-width: 10%; height: auto;">
@@ -616,7 +623,7 @@
         </div>
 
         <div id="consPage" class="page pros-cons">
-            <h2>Disadvantages of Blockchain Technology</h2>
+            <h2><u>Disadvantages of Blockchain Technology</u></h2>
             <ul>
                 <li><span class="dark-red">Scalability</span>: Managing large transaction volumes is challenging for many blockchain networks. Throughput is limited by traditional blockchains like Bitcoin and Ethereum, which need each node to validate and retain every transaction. Compared to centralized systems like Visa, which can process hundreds of transactions per second, Bitcoin handles just 7–10 transactions per second. During peak hours, this scalability problem causes network congestion, delayed transaction confirmations, and increased costs.</li>
                 <li><span class="dark-red">Energy Consumption</span>: Bitcoin and other Proof-of-Work (PoW) blockchains use much electricity because mining requires a lot of processing power. One transaction requires as much electricity as the typical US household uses in over two months. Environmental concerns are raised from the problem of high energy usage, which has also led to governmental scrutiny and, in certain places, crypto mining moratoriums. A more energy-efficient substitute is provided by Proof-of-Stake (PoS) systems, which significantly lower the amount of power used for each transaction.</li>
