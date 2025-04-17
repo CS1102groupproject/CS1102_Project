@@ -5,12 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CS1102 Blockchain Analysis</title>
     <script>
-    function greeting() {
-        var name;
+  function greeting() {
+    var name;
+    while (!name) {
         name = prompt("What is your name?");
-        document.getElementById("message").innerHTML = "Hello " + name + "!";
-        alert("Hello " +  name + " !" +" Welcome to our page! This page will let you know more about the mechanism and applications of blockchain. Let us explore together!");
+        
+        if (name) {
+            document.getElementById("message").innerHTML = "Hello " + name + "!";
+            alert("Hello " + name + "! Welcome to our page! This page will let you know more about the mechanism and applications of blockchain. Let us explore together!");
+        } else {
+            alert("Please enter a valid name.");
+        }
     }
+}
     </script>
     <style>
         body {
@@ -389,6 +396,10 @@
         <h1>CS1102_The Mechanism and Applications of Blockchain</h1>
         <h2>Project Members:</h2>
         <p>Yeung Ho Fung 57847209<br>Law Ho Tat 57317481<br>Ma Chun Chiu 57134824<br>Chiu Tsz Ki 56615622</p>
+        <ol>
+            <li>User Input</li>
+            <li>Conditional Loop</li>
+        </ol>
     </header>
 
     <main>
